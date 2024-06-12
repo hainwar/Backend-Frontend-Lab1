@@ -1,27 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';``
+import { StyleSheet, Text, View, Image } from 'react-native';
+import ButtonCustom from './assets/components/buttonCustum';
 
 const App = () => {
-  const ButtonCostom = ({ color, text}) => {
-    return (
-      <View style={{
-        backgroundColor: color,
-        width: 90,
-        height: 50,
-        borderRadius: 20,
-        justifyContent: 'center'
-      }}>
-        <Text style={{
-          textAlign: 'center',
-          color: 'white',
-          fontSize:20
-        }}> {text}
-
-        </Text>
-        </View>
-    )
-  }
-
   return (
     <View style={{
       flex:1,
@@ -46,7 +27,7 @@ const App = () => {
           justifyContent:'center',
           top:200
         }}>
-          <Image source={require('./assets/bg.jpg')} style={{
+          <Image source={require('./assets/img/bg.jpg')} style={{
             width:300,
             height:300,
             resizeMode:'contain'
@@ -58,24 +39,22 @@ const App = () => {
           alignItems:'flex-end',
           justifyContent:'center',
           flexDirection: 'row',
-          justifyContent: 'spacy-evenly',
-          marginBottom:100
+          justifyContent: 'space-evenly',
+          marginBottom:100,
         }}>
           <View style={{
             flex:1,
-            width: 80,
+            width: 90,
             height:40,
             justifyContent:'center',
             borderRadius:25,
             flexDirection:'row',
-            columnGap:20
+            columnGap:20,
             }}>
-              <ButtonCostom color='red' text='Login'/>
-              <ButtonCostom color='red' text='Sign Up'/>
+              <ButtonCustom color='red' text='Login'/>
+              <ButtonCustom color='red' text='Sign Up'/>
           </View>
-
         </View>
-
     </View>
   )
   
