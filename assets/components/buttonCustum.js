@@ -5,15 +5,14 @@ const ButtonCustom = ({ color, text}) => {
     return (
       <View style={{
         backgroundColor: color,
-        width: 90,
+        width: '80%',
         height: 50,
-        borderRadius: 20,
+        borderRadius: 10,
         justifyContent: 'center'
       }}>
         <Text style={{
           textAlign: 'center',
-          color: 'white',
-          fontSize:20
+          fontSize:15
         }}> {text}
 
         </Text>

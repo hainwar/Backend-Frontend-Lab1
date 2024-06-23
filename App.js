@@ -62,40 +62,67 @@
 
 // export default App;
 
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import React from "react";
+import ButtonCustom from './assets/components/buttonCustum';
+import TextInputCustom from "./assets/components/textInput";
+
 
 const App = () => {
-  const TextInputCustom =({ name, color }) => {
-  return (
-      <TextInput
-      placeholder={`Masukkan ${name}`}
-      style={{
-        height:40,
-        width: 200,
-        borderColor: 'gray',
-        borderWidth: 1,
-        borderRadius: 10,
-        padding:10, 
-        marginBottom: 10,
-        paddingLeft: 10,
-        color: color
-      }}
-      />
-  )
-}
-
 return (
   <View style={{
     flex:1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'black'
   }}>
-    <TextInputCustom name='Username' color='black' />
+    <View style={{
+      alignItems:'flex-start',
+      justifyContent:'flex-start',
+      width:'100%',
+      paddingLeft:20,
+      marginBottom:20,
+      marginTop:20
+    }}>
+      <Text style={{
+        color:'white',
+        fontSize:24
+      }}>Sign Up</Text>
+    </View>
+
+    <View style={{
+      flex:1,
+    }}>
+      <Image source={require('./assets/img/hero-1.png')} style={{
+        width:300,
+        height:300,
+        resizeMode:'contain'
+      }} />
+    </View>
+
+  <View style={{
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center',
+    width:'100%',
+    top:20
+  }}>
+    <TextInputCustom name='Username' color='white' />
     <TextInputCustom name='Email' color='red' />
     <TextInputCustom name='Password' color='blue' />
   </View>
+
+  <View style={{
+    flex:1,
+    justifyContent:'flex-end',
+    alignItems:'center',
+    bottom:230,
+    width:'100%'
+  }}>
+    <ButtonCustom color='red' text='Sign Up' />
+  </View>
+  </View>
 )
+ 
 }
 
 export default App;
