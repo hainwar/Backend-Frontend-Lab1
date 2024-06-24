@@ -1,67 +1,3 @@
-// import React from 'react';
-// import { StyleSheet, Text, View, Image } from 'react-native';
-// import ButtonCustom from './assets/components/buttonCustum';
-
-// const App = () => {
-//   return (
-//     <View style={{
-//       flex:1,
-//       backgroundColor: 'black'
-//     }}>
-//       <View>
-//         <Text style={{
-//           fontSize:30,
-//           textAlign:'center',
-//           top:20,
-//           bottom:0,
-//           justifyContent:'center',
-//           color:'red'
-//         }}>
-//           Selamat Datang di Welcome
-//         </Text>
-//         </View>
-
-//         <View style={{
-//           flex:1,
-//           alignItems:'center',
-//           justifyContent:'center',
-//           top:200
-//         }}>
-//           <Image source={require('./assets/img/bg.jpg')} style={{
-//             width:300,
-//             height:300,
-//             resizeMode:'contain'
-//           }} />
-//         </View>
-
-//         <View style={{
-//           flex:1,
-//           alignItems:'flex-end',
-//           justifyContent:'center',
-//           flexDirection: 'row',
-//           justifyContent: 'space-evenly',
-//           marginBottom:100,
-//         }}>
-//           <View style={{
-//             flex:1,
-//             width: 90,
-//             height:40,
-//             justifyContent:'center',
-//             borderRadius:25,
-//             flexDirection:'row',
-//             columnGap:20,
-//             }}>
-//               <ButtonCustom color='red' text='Login'/>
-//               <ButtonCustom color='red' text='Sign Up'/>
-//           </View>
-//         </View>
-//     </View>
-//   )
-  
-// }
-
-// export default App;
-
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import React from "react";
 
@@ -122,33 +58,38 @@ return (
         lineHeight:'34px',
         fontWeight:'bold',
         color:'#222222'
-      }}>Forgot Password</Text>
-    
-      <Text style={{
-        top:90,
-        padding:8,
-        fontSize:14
-      }}>Please, enter your email address. You will receive a link to create a new password via email.</Text>
+      }}>Login</Text>
     </View>
 
   <View style={{
     flex:1,
     width:'343px',
     height:'64px',
+    bottom:'100px',
     alignSelf:'center',
     alignItems:'center',
   }}>
     <TextInputCustom name='Email' color='666666' />
+    <TextInputCustom name='Password' color='666666' />
+  </View>
+
+  <View style={{
+    bottom:232,
+    left:263,
+  }}>
+    <Text style={{
+      color:'#222222',
+    }}>Forgot your password?</Text>
   </View>
 
   <View style={{
     flex:1,
     justifyContent:'flex-end',
     alignItems:'center',
-    bottom:392,
+    bottom:432,
     width:'100%',
   }}>
-    <ButtonCustom color='red' text='SEND' />
+    <ButtonCustom color='red' text='LOGIN' />
   </View>
 
   <View style={{
