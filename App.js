@@ -150,47 +150,6 @@ return (
   }}>
     <ButtonCustom color='red' text='SEND' />
   </View>
-
-  <View style={{
-    alignSelf:'center',
-
-  }}>
-    <Text style={{
-      color:'#222222',
-      fontSize:14,
-      bottom:270
-    }}>Or sign up with social account</Text>
-  </View>
-
-  <View style={{
-    flexDirection:'row',
-    columnGap:20,
-    alignSelf:'center',
-    bottom:250
-  }}>
-    <View style={{
-      backgroundColor:'white',
-      borderRadius:10,
-      padding:10
-    }}>
-    <Image source={require('./assets/img/google.png')} style={{
-      height:30,
-      width:50,
-      resizeMode:'contain',
-    }}/>
-  </View>
-    <View style={{
-      backgroundColor:'white',
-      borderRadius:10,
-      padding:10
-    }}>
-    <Image source={require('./assets/img/facebook.png')} style={{
-      height:30,
-      width:50,
-      resizeMode:'contain',
-    }}/>
-  </View>
-  </View>
   </View>
 )
 }
