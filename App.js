@@ -64,65 +64,141 @@
 
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import React from "react";
-import ButtonCustom from './assets/components/buttonCustum';
-import TextInputCustom from "./assets/components/textInput";
-
 
 const App = () => {
+  const TextInputCustom =({ name, color }) => {
+    return (
+        <TextInput
+        placeholder={` ${name}`}
+        style={{
+          borderColor: 'gray',
+          width:'390px',
+          height:'64px',
+          marginBottom:10,
+          padding:10,
+          color: color,
+          backgroundColor:'white',
+          shadowColor:'black',
+          shadowRadius: 1,
+          shadowOpacity:0.2,
+        }}
+        />
+    )
+  }
+  const ButtonCustom = ({ color, text}) => {
+    return (
+      <View style={{
+        backgroundColor: color,
+        width: '90%',
+        height: 50,
+        borderRadius: 20,
+        justifyContent: 'center'
+      }}>
+        <Text style={{
+          textAlign: 'center',
+          fontSize:15,
+          color:'white'
+        }}> {text}
+
+        </Text>
+        </View>
+    );
+  }
 return (
   <View style={{
     flex:1,
-    alignItems: 'center',
-    backgroundColor: 'black'
+    backgroundColor:'#F5F5F5'
   }}>
     <View style={{
+      flex:1,
       alignItems:'flex-start',
       justifyContent:'flex-start',
       width:'100%',
-      paddingLeft:20,
-      marginBottom:20,
-      marginTop:20
+      paddingLeft:'14px',
+      top:'106px',
     }}>
       <Text style={{
-        color:'white',
-        fontSize:24
+        fontSize:'34px',
+        lineHeight:'34px',
+        fontWeight:'bold',
+        color:'#222222'
       }}>Sign Up</Text>
-    </View>
-
-    <View style={{
-      flex:1,
-    }}>
-      <Image source={require('./assets/img/hero-1.png')} style={{
-        width:300,
-        height:300,
-        resizeMode:'contain'
-      }} />
     </View>
 
   <View style={{
     flex:1,
+    width:'343px',
+    height:'64px',
+    bottom:'100px',
+    alignSelf:'center',
     alignItems:'center',
-    justifyContent:'center',
-    width:'100%',
-    top:20
   }}>
-    <TextInputCustom name='Username' color='white' />
-    <TextInputCustom name='Email' color='red' />
-    <TextInputCustom name='Password' color='blue' />
+    <TextInputCustom name='Name' color='#666666' />
+    <TextInputCustom name='Email' color='666666' />
+    <TextInputCustom name='Password' color='666666' />
+  </View>
+
+  <View style={{
+    bottom:160,
+    left:244,
+  }}>
+    <Text style={{
+      color:'#222222',
+    }}>Already have an account?</Text>
   </View>
 
   <View style={{
     flex:1,
     justifyContent:'flex-end',
     alignItems:'center',
-    bottom:230,
-    width:'100%'
+    bottom:360,
+    width:'100%',
   }}>
-    <ButtonCustom color='red' text='Sign Up' />
+    <ButtonCustom color='red' text='SIGN UP' />
+  </View>
+
+  <View style={{
+    alignSelf:'center',
+
+  }}>
+    <Text style={{
+      color:'#222222',
+      fontSize:14,
+      bottom:190
+    }}>Or sign up with social account</Text>
+  </View>
+
+  <View style={{
+    flexDirection:'row',
+    columnGap:20,
+    alignSelf:'center',
+    bottom:170
+  }}>
+    <View style={{
+      backgroundColor:'white',
+      borderRadius:10,
+      padding:10
+    }}>
+    <Image source={require('./assets/img/google.png')} style={{
+      height:30,
+      width:50,
+      resizeMode:'contain',
+    }}/>
+  </View>
+    <View style={{
+      backgroundColor:'white',
+      borderRadius:10,
+      padding:10
+    }}>
+    <Image source={require('./assets/img/facebook.png')} style={{
+      height:30,
+      width:50,
+      resizeMode:'contain',
+    }}/>
+  </View>
   </View>
   </View>
 )
- 
 }
 
 export default App;
