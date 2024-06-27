@@ -8,10 +8,10 @@ const App = () => {
         placeholder={` ${name}`}
         style={{
           borderColor: 'gray',
-          width:'390px',
-          height:'64px',
+          width:355,
+          height:64,
           marginBottom:10,
-          padding:10,
+          paddingHorizontal:10,
           color: color,
           backgroundColor:'white',
           shadowColor:'black',
@@ -50,12 +50,12 @@ return (
       alignItems:'flex-start',
       justifyContent:'flex-start',
       width:'100%',
-      paddingLeft:'14px',
-      top:'106px',
+      paddingLeft:14,
+      top:106
     }}>
       <Text style={{
-        fontSize:'34px',
-        lineHeight:'34px',
+        fontSize:34,
+        lineHeight:34,
         fontWeight:'bold',
         color:'#222222'
       }}>Login</Text>
@@ -63,9 +63,8 @@ return (
 
   <View style={{
     flex:1,
-    width:'343px',
-    height:'64px',
-    bottom:'100px',
+    width:343,
+    height:64,
     alignSelf:'center',
     alignItems:'center',
   }}>
@@ -74,8 +73,9 @@ return (
   </View>
 
   <View style={{
-    bottom:232,
-    left:263,
+    alignSelf:'flex-end',
+    bottom:40,
+    right:17
   }}>
     <Text style={{
       color:'#222222',
@@ -86,7 +86,7 @@ return (
     flex:1,
     justifyContent:'flex-end',
     alignItems:'center',
-    bottom:432,
+    bottom:150,
     width:'100%',
   }}>
     <ButtonCustom color='red' text='LOGIN' />
@@ -99,7 +99,7 @@ return (
     <Text style={{
       color:'#222222',
       fontSize:14,
-      bottom:270
+      bottom:50
     }}>Or sign up with social account</Text>
   </View>
 
@@ -107,7 +107,7 @@ return (
     flexDirection:'row',
     columnGap:20,
     alignSelf:'center',
-    bottom:250
+    bottom:35
   }}>
     <View style={{
       backgroundColor:'white',

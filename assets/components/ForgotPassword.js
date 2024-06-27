@@ -8,16 +8,17 @@ const App = () => {
         placeholder={` ${name}`}
         style={{
           borderColor: 'gray',
-          width:'390px',
-          height:'64px',
+          width:355,
+          height:64,
           marginBottom:10,
-          padding:10,
+          paddingHorizontal:10,
           color: color,
           backgroundColor:'white',
           shadowColor:'black',
           shadowRadius: 1,
           shadowOpacity:0.2,
         }}
+        placeholderTextColor={color}
         />
     )
   }
@@ -47,32 +48,32 @@ return (
   }}>
     <View style={{
       flex:1,
-      alignItems:'flex-start',
       justifyContent:'flex-start',
       width:'100%',
-      paddingLeft:'14px',
-      top:'106px',
+      top:106,
     }}>
       <Text style={{
-        fontSize:'34px',
-        lineHeight:'34px',
+        alignItems:'flex-start',
+        paddingLeft:14,
+        fontSize:34,
+        lineHeight:34,
         fontWeight:'bold',
         color:'#222222'
       }}>Forgot Password</Text>
     
       <Text style={{
-        top:90,
-        padding:8,
-        fontSize:14
+        top:40,
+        paddingHorizontal:15,
+        fontSize:14,
+        width:'101%'
       }}>Please, enter your email address. You will receive a link to create a new password via email.</Text>
     </View>
 
   <View style={{
     flex:1,
-    width:'343px',
-    height:'64px',
     alignSelf:'center',
     alignItems:'center',
+    top:10
   }}>
     <TextInputCustom name='Email' color='666666' />
   </View>
@@ -81,16 +82,10 @@ return (
     flex:1,
     justifyContent:'flex-end',
     alignItems:'center',
-    bottom:392,
+    bottom:250,
     width:'100%',
   }}>
     <ButtonCustom color='red' text='SEND' />
-  </View>
-
-  <View style={{
-    alignSelf:'center',
-
-  }}>
   </View>
   </View>
 )

@@ -8,10 +8,10 @@ const App = () => {
         placeholder={` ${name}`}
         style={{
           borderColor: 'gray',
-          width:'390px',
-          height:'64px',
+          width:355,
+          height:64,
           marginBottom:10,
-          padding:10,
+          paddingHorizontal:10,
           color: color,
           backgroundColor:'white',
           shadowColor:'black',
@@ -50,12 +50,12 @@ return (
       alignItems:'flex-start',
       justifyContent:'flex-start',
       width:'100%',
-      paddingLeft:'14px',
-      top:'106px',
+      paddingLeft:14,
+      top:106
     }}>
       <Text style={{
-        fontSize:'34px',
-        lineHeight:'34px',
+        fontSize:34,
+        lineHeight:34,
         fontWeight:'bold',
         color:'#222222'
       }}>Sign Up</Text>
@@ -63,20 +63,19 @@ return (
 
   <View style={{
     flex:1,
-    width:'343px',
-    height:'64px',
-    bottom:'100px',
+    width:343,
+    height:64,
     alignSelf:'center',
     alignItems:'center',
   }}>
-    <TextInputCustom name='Name' color='#666666' />
+    <TextInputCustom name='Name' color='666666' />
     <TextInputCustom name='Email' color='666666' />
     <TextInputCustom name='Password' color='666666' />
   </View>
 
   <View style={{
-    bottom:160,
-    left:244,
+    alignSelf:'flex-end',
+    right:17
   }}>
     <Text style={{
       color:'#222222',
@@ -87,7 +86,7 @@ return (
     flex:1,
     justifyContent:'flex-end',
     alignItems:'center',
-    bottom:360,
+    bottom:110,
     width:'100%',
   }}>
     <ButtonCustom color='red' text='SIGN UP' />
@@ -100,7 +99,7 @@ return (
     <Text style={{
       color:'#222222',
       fontSize:14,
-      bottom:190
+      bottom:40
     }}>Or sign up with social account</Text>
   </View>
 
@@ -108,7 +107,7 @@ return (
     flexDirection:'row',
     columnGap:20,
     alignSelf:'center',
-    bottom:170
+    bottom:25
   }}>
     <View style={{
       backgroundColor:'white',
