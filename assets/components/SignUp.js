@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import React from "react";
 
-const App = () => {
+const SignUp = () => {
   const TextInputCustom =({ name, color }) => {
     return (
         <TextInput
@@ -136,4 +136,4 @@ return (
 )
 }
 
-export default App;
+export default SignUp;

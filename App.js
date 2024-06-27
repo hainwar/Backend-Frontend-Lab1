@@ -478,48 +478,101 @@
 
 // export default App
 
-import { StyleSheet, View, Text } from "react-native";
-import React from "react";
-import { useFonts } from "expo-font";
+// import { StyleSheet, View, Text } from "react-native";
+// import React from "react";
+// import { useFonts } from "expo-font";
 
-const App = () => {
-  const [fontLoaded, fontError] = useFonts({
-    'Metro-Bold': require('./assets/fonts/Metropolis-Bold.otf'),
-    'Metro-Medium': require('./assets/fonts/Metropolis-Medium.otf'),
-    'Metro-SemiBold': require('./assets/fonts/Metropolis-SemiBold.otf'),
-    'Metro-Black': require('./assets/fonts/Metropolis-Black.otf'),
-  })
+// const App = () => {
+//   const [fontLoaded, fontError] = useFonts({
+//     'Metro-Bold': require('./assets/fonts/Metropolis-Bold.otf'),
+//     'Metro-Medium': require('./assets/fonts/Metropolis-Medium.otf'),
+//     'Metro-SemiBold': require('./assets/fonts/Metropolis-SemiBold.otf'),
+//     'Metro-Black': require('./assets/fonts/Metropolis-Black.otf'),
+//   })
 
-  if (!fontLoaded) return <View>
-    <Text>Font Tidak Ditemukan!</Text>
-  </View>
+//   if (!fontLoaded) return <View>
+//     <Text>Font Tidak Ditemukan!</Text>
+//   </View>
 
+//   return(
+//     <View style={{
+//       flex:1,
+//       justifyContent:'center',
+//       alignItems:'center',
+//     }}>
+//       <Text style={{
+//         fontSize:30
+//       }}>Font Biasa</Text>
+//       <Text style={{
+//         fontFamily:'Metro-Bold',
+//         fontSize:30
+//       }}>Metro Bold</Text>
+//       <Text style={{
+//         fontFamily:'Metro-Medium',
+//         fontSize:30
+//       }}>Metro Medium</Text>
+//       <Text style={{
+//         fontFamily:'Metro-SemiBold',
+//         fontSize:30
+//       }}>Metro SemiBold</Text>
+//       <Text style={{
+//         fontFamily:'Metro-Black',
+//         fontSize:30
+//       }}>Metro Black</Text>
+//     </View>
+//   )
+// }
+
+// export default App
+
+import * as React from 'react';
+import { View, Text, Button } from 'react-native';
+import { NavigationContainer } from './node_modules/@react-navigation/native';
+import { createNativeStackNavigator } from './node_modules/@react-navigation/native-stack';
+import LoginPage from './assets/components/Login';
+import { createBottomTabNavigator } from './node_modules/@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+function MyTabs(){
   return(
+    <Tab.Navigator>
+      <Tab.Screen options={{
+        headerShown:false
+      }}
+      name="Home" component={HomeScreen} />
+
+      <Tab.Screen name='Login' component={LoginPage} />
+    </Tab.Navigator>
+  )
+}
+
+function HomeScreen({navigation}){
+  return (
     <View style={{
       flex:1,
-      justifyContent:'center',
       alignItems:'center',
+      justifyContent:'center',
     }}>
       <Text style={{
-        fontSize:30
-      }}>Font Biasa</Text>
-      <Text style={{
-        fontFamily:'Metro-Bold',
-        fontSize:30
-      }}>Metro Bold</Text>
-      <Text style={{
-        fontFamily:'Metro-Medium',
-        fontSize:30
-      }}>Metro Medium</Text>
-      <Text style={{
-        fontFamily:'Metro-SemiBold',
-        fontSize:30
-      }}>Metro SemiBold</Text>
-      <Text style={{
-        fontFamily:'Metro-Black',
-        fontSize:30
-      }}>Metro Black</Text>
+        fontSize:16,
+        fontWeight:'bold',
+        padding:15
+      }}>Home Screen</Text>
+      <Button title="Go to Login" onPress={() => navigation.navigate('Login')}
+      />
     </View>
+  )
+}
+
+const Stack = createNativeStackNavigator();
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={MyTabs} />
+        <Stack.Screen name="Login" component={LoginPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
 

@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import React from "react";
 
-const App = () => {
+const Login = () => {
   const TextInputCustom =({ name, color }) => {
     return (
         <TextInput
@@ -51,7 +51,7 @@ return (
       justifyContent:'flex-start',
       width:'100%',
       paddingLeft:14,
-      top:106
+      top:26
     }}>
       <Text style={{
         fontSize:34,
@@ -67,6 +67,7 @@ return (
     height:64,
     alignSelf:'center',
     alignItems:'center',
+    bottom:30
   }}>
     <TextInputCustom name='Email' color='666666' />
     <TextInputCustom name='Password' color='666666' />
@@ -74,7 +75,7 @@ return (
 
   <View style={{
     alignSelf:'flex-end',
-    bottom:40,
+    bottom:20,
     right:17
   }}>
     <Text style={{
@@ -86,7 +87,7 @@ return (
     flex:1,
     justifyContent:'flex-end',
     alignItems:'center',
-    bottom:150,
+    bottom:80,
     width:'100%',
   }}>
     <ButtonCustom color='red' text='LOGIN' />
@@ -114,7 +115,7 @@ return (
       borderRadius:10,
       padding:10
     }}>
-    <Image source={require('./assets/img/google.png')} style={{
+    <Image source={require('../img/google.png')} style={{
       height:30,
       width:50,
       resizeMode:'contain',
@@ -125,7 +126,7 @@ return (
       borderRadius:10,
       padding:10
     }}>
-    <Image source={require('./assets/img/facebook.png')} style={{
+    <Image source={require('../img/facebook.png')} style={{
       height:30,
       width:50,
       resizeMode:'contain',
@@ -136,4 +137,4 @@ return (
 )
 }
 
-export default App;
+export default Login;
