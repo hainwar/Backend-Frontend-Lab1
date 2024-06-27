@@ -444,3 +444,36 @@
 // }
 
 // export default App;
+
+
+//* UseFonts
+
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { useFonts } from "expo-font";
+
+const App = () => {
+  const [fontLoaded, fontError] = useFonts({
+    'Metro-Bold': require('./assets/fonts/Metropolis-Bold.otf'),
+  })
+
+  if (!fontLoaded) return <View>
+    <Text>Font Tidak Ditemukan!</Text>
+  </View>
+
+  return(
+    <View style={{
+      flex:1,
+      justifyContent:'center',
+      alignItems:'center'
+    }}>
+      <Text style>Hello World</Text>
+      <Text style={{
+        fontFamily: 'Metro-Bold',
+        fontSize:30
+      }}>Metro Bold</Text>
+    </View>
+  )
+}
+
+export default App
