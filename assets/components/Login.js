@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import React from "react";
+import { useFonts } from 'expo-font';
+import { AppLoading } from 'expo';
 
-const Login = () => {
-  const TextInputCustom =({ name, color }) => {
-    return (
-        <TextInput
-        placeholder={` ${name}`}
-        style={{
-          borderColor: 'gray',
+const TextInputCustom =({ name, color }) => {
+  return (
+    <TextInput
+    placeholder={` ${name}`}
+    style={{
+      borderColor: 'gray',
           width:355,
           height:64,
           marginBottom:10,
@@ -19,17 +20,17 @@ const Login = () => {
           shadowOpacity:0.2,
         }}
         />
-    )
-  }
-  const ButtonCustom = ({ color, text}) => {
-    return (
-      <View style={{
-        backgroundColor: color,
-        width: '90%',
-        height: 50,
-        borderRadius: 20,
-        justifyContent: 'center'
-      }}>
+      )
+    }
+    const ButtonCustom = ({ color, text}) => {
+      return (
+        <View style={{
+          backgroundColor: color,
+          width: '90%',
+          height: 50,
+          borderRadius: 20,
+          justifyContent: 'center'
+        }}>
         <Text style={{
           textAlign: 'center',
           fontSize:15,
@@ -40,8 +41,9 @@ const Login = () => {
         </View>
     );
   }
-return (
-  <View style={{
+  const Login = () => {
+  return (
+    <View style={{
     flex:1,
     backgroundColor:'#F5F5F5'
   }}>
@@ -56,8 +58,8 @@ return (
       <Text style={{
         fontSize:34,
         lineHeight:34,
-        fontWeight:'bold',
-        color:'#222222'
+        color:'#222222',
+        fontFamily:'Metro-Bold'
       }}>Login</Text>
     </View>
 
@@ -67,7 +69,8 @@ return (
     height:64,
     alignSelf:'center',
     alignItems:'center',
-    bottom:30
+    bottom:30,
+    fontFamily:'Metro-SemiBold'
   }}>
     <TextInputCustom name='Email' color='666666' />
     <TextInputCustom name='Password' color='666666' />
@@ -80,6 +83,7 @@ return (
   }}>
     <Text style={{
       color:'#222222',
+      fontFamily:'Metro-Medium'
     }}>Forgot your password?</Text>
   </View>
 
@@ -100,7 +104,8 @@ return (
     <Text style={{
       color:'#222222',
       fontSize:14,
-      bottom:50
+      bottom:50,
+      fontFamily:'Metro-Medium'
     }}>Or sign up with social account</Text>
   </View>
 
