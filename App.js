@@ -1,75 +1,71 @@
-import * as React from 'react';
-import { View, Text, Button, Image } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginPage from './assets/components/Login';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeAktif from './assets/img/homeAktif.jpeg';
-import HomeNonAktif from './assets/img/home.jpeg';
-import ShopAktif from './assets/img/shopAktif.jpeg';
-import ShopNonAktif from './assets/img/shop.jpeg';
+import { createStackNavigator } from '@react-navigation/stack';
+import SignUpPage from './assets/components/SignUpPage';
+import LoginPage from './assets/components/LoginPage';
+import ForgotPasswordPage from './assets/components/ForgotPasswordPage';
 import { useFonts } from 'expo-font';
 
-const Tab = createBottomTabNavigator();
-function MyTabs(){
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen}
-      options={{headerShown:false, tabBarIcon:({focused}) => (
-        <Image source={focused ? HomeAktif : HomeNonAktif} style={{width:30, height:30}} />
-      )
+
+const HomeScreen = ({navigation}) => (
+  <View style={{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+  }}> 
+    <Text style={{
+      fontSize:25,
+      marginBottom:20,
+      fontFamily:'MetroBold'
+    }}>Home Screen</Text>
+
+    <TouchableOpacity style={{
+      marginBottom:20
     }}
-    />
-
-      <Tab.Screen name="Login" component={LoginPage}
-      options={{headerShown:false, tabBarIcon:({focused}) => (
-        <Image source={focused ? ShopAktif : ShopNonAktif} style={{width:30, height:30}} />
-      )
-    }}
-    />
-    </Tab.Navigator>
-  )
-}
-
-function HomeScreen({navigation}){
-    const [fontLoaded] = useFonts({
-      'Metro-Bold': require('./assets/fonts/Metropolis-Bold.otf'),
-      'Metro-Medium': require('./assets/fonts/Metropolis-Medium.otf'),
-      'Metro-SemiBold': require('./assets/fonts/Metropolis-SemiBold.otf'),
-      'Metro-Black': require('./assets/fonts/Metropolis-Black.otf'),
-    })
-  
-    if (!fontLoaded) return <View>
-      <Text>Font Tidak Ditemukan!</Text>
-    </View>
-
-  return (
-    <View style={{
-      flex:1,
-      alignItems:'center',
-      justifyContent:'center',
-    }}>
+    onPress={() => navigation.navigate('Sign Up')}>
       <Text style={{
-        fontSize:16,
-        padding:15,
-        fontFamily:'Metro-Black',
-      }}>Home Screen</Text>
-      <Button title="Go to Login" onPress={() => navigation.navigate('Login')}
-      />
-    </View>
-  )
-}
+        backgroundColor:'#696969',
+        padding:10,
+        borderRadius:10,
+        color:'white',
+        fontSize:20,
+        fontFamily:'MetroMedium',
+        shadowColor:'black',
+        shadowRadius: 10,
+        shadowOpacity:0.2,
 
-const Stack = createNativeStackNavigator();
-function App() {
+      
+      }}>Go to Sign Up Page</Text>
+    </TouchableOpacity>
+  </View>
+)
+
+const Stack = createStackNavigator();
+const App = () => {
+  const [fontsLoaded] = useFonts({
+    'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
+    'MetroLight': require('./assets/fonts/Metropolis-Light.otf'),
+    'MetroBlack': require('./assets/fonts/Metropolis-Black.otf'),
+    'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf'),
+    'MetroSemiBold': require('./assets/fonts/Metropolis-SemiBold.otf'),
+  });
+
+    if (!fontsLoaded) 
+      return <View>
+        <Text>Font Tidak Ditemukan</Text>
+        </View>
+    
+
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={MyTabs} />
+      <Stack.Navigator initialRouteName="HomeScreen">
+        <Stack.Screen name="Home Screen" component={HomeScreen} />
+        <Stack.Screen name="Sign Up" component={SignUpPage} />
         <Stack.Screen name="Login" component={LoginPage} />
+        <Stack.Screen name="Forgot Password" component={ForgotPasswordPage} />
       </Stack.Navigator>
     </NavigationContainer>
-  )
+  );
 }
-
-export default App
+export default App;

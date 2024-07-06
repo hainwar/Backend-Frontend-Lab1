@@ -1,3 +1,76 @@
+# Materi LAB
+
+## Pengenalan dan Penginstalan Expo - React Native
+
+### Pengertian React Native dan Expo
+React Native adalah framework yang dikembangkan oleh Facebook untuk membangun aplikasi menggunakan JavaScript dan React. Expo adalah alat dan platform yang dibangun di atas React Native yang menyederhanakan proses pengembangan, pengujian, dan distribusi aplikasi mobile.
+
+### Cara Memulai
+
+#### 1. Node.js: Pastikan Anda telah menginstal Node.js dan npm di komputer Anda. Anda dapat mendownloadnya dari nodejs.org
+
+#### 2. Expo CLI: Instal Expo CLI secara global menggunankan npm atau yarn:
+``npm install -g expo-cli``
+atau
+``yarn global add expo-cli``
+
+### Membuat Proyek Baru
+
+#### 1. Buat proyek baru dengan Expo CLI:
+``expo init my-new-project``
+
+Pilih template yang diinginkan, misalnya"blank" untuk proyek kosong.
+
+#### 2. Masuk ke direktori proyek:
+``cd my-new-project``
+
+#### 3. Jalankan proyek:
+``expo start``
+atau ``npm start``
+
+
+## Komponen Dasar
+
+import { StyleSheet, View } from "react-native";
+import React from "react";
+
+const app = () => {
+    return (
+        <View style={{flex : 1}}>
+            <View style={{
+                flex = 1,
+                flexDirection : 'row',
+                backgroundColor: 'white',
+            }}>
+                <View style={{
+                    flex : 1,
+                    backgroundColor : 'red'
+                }}>
+                </View>
+                <View style={{
+                    flex : 1,
+                    backgroundColor : 'yellow'
+                }}>
+            </View>
+        </View>
+        <View style={{
+            flex : 1,
+            backgroundColor : 'green'
+        }}>
+        </View>
+        <View style={{
+            flex : 1,
+            backgroundColor: 'yellow'
+        }}>
+            </View>
+    </View>
+    )
+}
+export default app
+
+## Button View
+
+
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import ButtonCustom from './assets/components/buttonCustum';
@@ -56,14 +129,11 @@ const App = () => {
           </View>
         </View>
     </View>
-  )
-  
+  ) 
 }
+export default App
 
-export default App;
-
-
-# Sign Up
+## Sign Up
 
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import React from "react";
@@ -200,12 +270,11 @@ return (
   </View>
   </View>
   </View>
-)
+  )
 }
+export default App
 
-export default App;
-
-# Login
+## Login
 
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import React from "react";
@@ -342,13 +411,12 @@ return (
   </View>
   </View>
   </View>
-)
+  )
 }
+export default App
 
-export default App;
 
-
-# Forgot Password
+## Forgot Password
 
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import React from "react";
@@ -440,13 +508,11 @@ return (
     <ButtonCustom color='red' text='SEND' />
   </View>
   </View>
-)
+  )
 }
+export default App
 
-export default App;
-
-
-# UseFonts
+## UseFonts
 
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
@@ -525,7 +591,7 @@ const App = () => {
 
 export default App
 
-# Navigation
+## Navigation
 
 import * as React from 'react';
 import { View, Text, Button, Image } from 'react-native';
@@ -586,6 +652,105 @@ function HomeScreen({navigation}){
       <Button title="Go to Login" onPress={() => navigation.navigate('Login')}
       />
     </View>
+  )
+}
+
+const Stack = createNativeStackNavigator();
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={MyTabs} />
+        <Stack.Screen name="Login" component={LoginPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
+
+export default App
+
+//* Navigation
+import * as React from 'react';
+import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginPage from './assets/components/LoginPage';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeAktif from './assets/img/homeAktif.jpeg';
+import HomeNonAktif from './assets/img/home.jpeg';
+import ShopAktif from './assets/img/shopAktif.jpeg';
+import ShopNonAktif from './assets/img/shop.jpeg';
+import { useFonts } from 'expo-font';
+
+const Tab = createBottomTabNavigator();
+function HomeScreen({navigation}){
+    const [fontLoaded] = useFonts({
+      'Metro-Bold': require('./assets/fonts/Metropolis-Bold.otf'),
+      'Metro-Medium': require('./assets/fonts/Metropolis-Medium.otf'),
+      'Metro-SemiBold': require('./assets/fonts/Metropolis-SemiBold.otf'),
+      'Metro-Black': require('./assets/fonts/Metropolis-Black.otf'),
+    })
+  
+    if (!fontLoaded) {
+      return (
+        <View>
+          <Text>Font Tidak Ditemukan!</Text>
+          </View>
+        )
+      }
+
+      return (
+        <View style={{
+          flex:1,
+          alignItems:'center',
+          justifyContent:'center',
+        }}>
+          <Text style={{
+            fontSize:16,
+            padding:15,
+            fontFamily:'Metro-Black',
+          }}>Home Screen</Text>
+      
+          <TouchableOpacity
+          style={{
+            backgroundColor:'blue',
+            padding:10,
+            marginBottom:10,
+            borderRadius:5,
+            alignItems:'center',
+
+          }} 
+          onPress={() => navigation.navigate('Login')}>
+          <Button title="Go to Login" onPress={() => navigation.navigate('Login')}
+          />
+          <Text style={{
+            color:'white',
+            fontFamily:'Metro-Bold',
+          }}>KLIK UNTUK MASUK</Text>
+          </TouchableOpacity>
+        </View>
+      )
+      }
+
+function MyTabs(){
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen}
+      options={{
+        headerShown:false, tabBarIcon:({focused}) => (
+        <Image source={focused ? HomeAktif : HomeNonAktif} style={{width:30, height:30}} />
+      )
+    }}
+    />
+
+<Tab.Screen name="Login" component={LoginPage}
+      options={{
+        headerShown:false, tabBarIcon:({focused}) => (
+        <Image source={focused ? ShopAktif : ShopNonAktif} style={{width:30, height:30}} />
+      )
+    }}
+    />
+    </Tab.Navigator>
   )
 }
 

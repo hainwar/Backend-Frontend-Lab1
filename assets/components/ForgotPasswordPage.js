@@ -1,29 +1,28 @@
-import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import { Text, View, TextInput } from "react-native";
 import React from "react";
 
-const ForgotPassword = () => {
-  const TextInputCustom =({ name, color }) => {
-    return (
-        <TextInput
-        placeholder={` ${name}`}
-        style={{
-          borderColor: 'gray',
-          width:355,
-          height:64,
-          marginBottom:10,
-          paddingHorizontal:10,
-          color: color,
-          backgroundColor:'white',
-          shadowColor:'black',
-          shadowRadius: 1,
-          shadowOpacity:0.2,
-        }}
-        placeholderTextColor={color}
-        />
-    )
-  }
-  const ButtonCustom = ({ color, text}) => {
-    return (
+const TextInputCustom =({ name, color }) => (
+    <TextInput
+    placeholder={` ${name}`}
+    style={{
+      borderColor: 'gray',
+      width:355,
+      height:64,
+      marginBottom:10,
+      paddingHorizontal:10,
+      color: color,
+      backgroundColor:'white',
+      shadowColor:'black',
+      shadowRadius: 1,
+      shadowOpacity:0.2,
+      fontFamily:'MetroLight',
+      fontSize:15,
+    }}
+    placeholderTextColor={color}
+    />
+  )
+  
+  const ButtonCustom = ({ color, text}) => (
       <View style={{
         backgroundColor: color,
         width: '90%',
@@ -34,61 +33,63 @@ const ForgotPassword = () => {
         <Text style={{
           textAlign: 'center',
           fontSize:15,
-          color:'white'
+          color:'white',
+          fontFamily:'MetroBold',
+          letterSpacing:1,
         }}> {text}
 
         </Text>
         </View>
     );
-  }
-return (
-  <View style={{
-    flex:1,
-    backgroundColor:'#F5F5F5'
+  
+  const ForgotPasswordPage = () => (
+    <View style={{
+
+      backgroundColor:'#F5F5F5'
   }}>
     <View style={{
       flex:1,
       justifyContent:'flex-start',
       width:'100%',
-      top:106,
+      top:35,
     }}>
       <Text style={{
         alignItems:'flex-start',
         paddingLeft:14,
         fontSize:34,
-        lineHeight:34,
-        fontWeight:'bold',
-        color:'#222222'
+        color:'#222222',
+        fontFamily:'MetroBold'
       }}>Forgot Password</Text>
     
       <Text style={{
-        top:40,
+        top:20,
         paddingHorizontal:15,
         fontSize:14,
-        width:'101%'
+        width:'100%',
+        fontFamily:'MetroLight',
       }}>Please, enter your email address. You will receive a link to create a new password via email.</Text>
     </View>
 
   <View style={{
     flex:1,
+    justifyContent:'center',
     alignSelf:'center',
     alignItems:'center',
-    top:10
+    minHeight:250,
   }}>
-    <TextInputCustom name='Email' color='666666' />
+    <TextInputCustom name='Email' color='#666666' />
   </View>
 
   <View style={{
     flex:1,
     justifyContent:'flex-end',
     alignItems:'center',
-    bottom:250,
     width:'100%',
+    bottom:50
   }}>
     <ButtonCustom color='red' text='SEND' />
   </View>
   </View>
-)
-}
+);
 
-export default ForgotPassword;
+export default ForgotPasswordPage

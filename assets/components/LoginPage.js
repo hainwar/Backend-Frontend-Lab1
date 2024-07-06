@@ -1,15 +1,13 @@
-import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import { Text, View, TextInput, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import { useFonts } from 'expo-font';
-import { AppLoading } from 'expo';
 
-const TextInputCustom =({ name, color }) => {
-  return (
+const TextInputCustom =({ name, color, secureTextEntry }) => (
     <TextInput
     placeholder={` ${name}`}
+    secureTextEntry={secureTextEntry}
     style={{
       borderColor: 'gray',
-          width:355,
+          width:'90%',
           height:64,
           marginBottom:10,
           paddingHorizontal:10,
@@ -18,12 +16,13 @@ const TextInputCustom =({ name, color }) => {
           shadowColor:'black',
           shadowRadius: 1,
           shadowOpacity:0.2,
+          fontFamily:'MetroLight',
+          fontSize:15,
         }}
         />
       )
-    }
-    const ButtonCustom = ({ color, text}) => {
-      return (
+    
+    const ButtonCustom = ({ color, text}) => (
         <View style={{
           backgroundColor: color,
           width: '90%',
@@ -34,15 +33,16 @@ const TextInputCustom =({ name, color }) => {
         <Text style={{
           textAlign: 'center',
           fontSize:15,
-          color:'white'
+          color:'white',
+          fontFamily:'MetroBold',
+          letterSpacing:1,
         }}> {text}
 
         </Text>
         </View>
     );
-  }
-  const Login = () => {
-  return (
+  
+  const LoginPage = ({navigation}) => (
     <View style={{
     flex:1,
     backgroundColor:'#F5F5F5'
@@ -53,45 +53,48 @@ const TextInputCustom =({ name, color }) => {
       justifyContent:'flex-start',
       width:'100%',
       paddingLeft:14,
-      top:26
+      top:35
     }}>
       <Text style={{
         fontSize:34,
-        lineHeight:34,
         color:'#222222',
-        fontFamily:'Metro-Bold'
+        fontFamily:'MetroBold'
       }}>Login</Text>
     </View>
 
   <View style={{
     flex:1,
-    width:343,
-    height:64,
+    width:'100%',
     alignSelf:'center',
     alignItems:'center',
-    bottom:30,
-    fontFamily:'Metro-SemiBold'
+    minHeight:250,
+    top:19
   }}>
-    <TextInputCustom name='Email' color='666666' />
-    <TextInputCustom name='Password' color='666666' />
+    <TextInputCustom name='Email' color='#666666' />
+    <TextInputCustom name='Password' color='#666666'secureTextEntry={true}/>
   </View>
 
-  <View style={{
+  <TouchableOpacity
+  style={{
+    flex:1,
     alignSelf:'flex-end',
-    bottom:20,
-    right:17
-  }}>
+    bottom:50,
+    right:18,
+  }}
+  onPress={() => navigation.navigate('Forgot Password')}>
     <Text style={{
       color:'#222222',
-      fontFamily:'Metro-Medium'
+      fontSize:15,
+      bottom:30,
+      fontFamily:'MetroMedium',
     }}>Forgot your password?</Text>
-  </View>
+  </TouchableOpacity>
 
   <View style={{
     flex:1,
     justifyContent:'flex-end',
     alignItems:'center',
-    bottom:80,
+    bottom:155,
     width:'100%',
   }}>
     <ButtonCustom color='red' text='LOGIN' />
@@ -103,9 +106,10 @@ const TextInputCustom =({ name, color }) => {
   }}>
     <Text style={{
       color:'#222222',
-      fontSize:14,
-      bottom:50,
-      fontFamily:'Metro-Medium'
+      fontSize:15,
+      bottom:90,
+      fontFamily:'MetroMedium',
+      fontSize:15,
     }}>Or sign up with social account</Text>
   </View>
 
@@ -113,7 +117,7 @@ const TextInputCustom =({ name, color }) => {
     flexDirection:'row',
     columnGap:20,
     alignSelf:'center',
-    bottom:35
+    bottom:75
   }}>
     <View style={{
       backgroundColor:'white',
@@ -140,6 +144,5 @@ const TextInputCustom =({ name, color }) => {
   </View>
   </View>
 )
-}
 
-export default Login;
+export default LoginPage
