@@ -6,7 +6,7 @@ const TextInputCustom =({ name, color }) => (
     placeholder={` ${name}`}
     style={{
       borderColor: 'gray',
-      width:355,
+      width:'90%',
       height:64,
       marginBottom:10,
       paddingHorizontal:10,
@@ -76,6 +76,7 @@ const TextInputCustom =({ name, color }) => (
     alignSelf:'center',
     alignItems:'center',
     minHeight:250,
+    width:'100%'
   }}>
     <TextInputCustom name='Email' color='#666666' />
   </View>
