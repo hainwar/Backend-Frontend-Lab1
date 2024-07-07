@@ -90,6 +90,7 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
     }}>Forgot your password?</Text>
   </TouchableOpacity>
 
+  <TouchableOpacity onPress={() => alert('Login')}>
   <View style={{
     flex:1,
     justifyContent:'flex-end',
@@ -99,6 +100,7 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
   }}>
     <ButtonCustom color='red' text='LOGIN' />
   </View>
+    </TouchableOpacity>
 
   <View style={{
     alignSelf:'center',

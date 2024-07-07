@@ -1,4 +1,4 @@
-import { Text, View, TextInput } from "react-native";
+import { Text, View, TextInput, TouchableOpacity } from "react-native";
 import React from "react";
 
 const TextInputCustom =({ name, color }) => (
@@ -28,7 +28,8 @@ const TextInputCustom =({ name, color }) => (
         width: '90%',
         height: 50,
         borderRadius: 20,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems:'center'
       }}>
         <Text style={{
           textAlign: 'center',
@@ -81,6 +82,7 @@ const TextInputCustom =({ name, color }) => (
     <TextInputCustom name='Email' color='#666666' />
   </View>
 
+  <TouchableOpacity onPress={() => alert('Email sent!')}>
   <View style={{
     flex:1,
     justifyContent:'flex-end',
@@ -90,6 +92,7 @@ const TextInputCustom =({ name, color }) => (
   }}>
     <ButtonCustom color='red' text='SEND' />
   </View>
+    </TouchableOpacity>
   </View>
 );
 
