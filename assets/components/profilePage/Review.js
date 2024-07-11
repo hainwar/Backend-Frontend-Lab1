@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, View } from "react-native";
-import useCustomFonts from "../fonts/Fonts";
+import useCustomFonts from "../../fonts/Fonts";
 
-const HomeScreen = () => {
+const Review = () => {
     const [loaded] = useCustomFonts();
     if (!loaded) {
         return (
@@ -17,12 +17,17 @@ return (
         justifyContent:'center',
     }}>
         <Text style={{
-            fontSize:16,
+            fontSize:26,
             padding:15,
             fontFamily:'MetroBold',
-        }}>Home Screen</Text>
+        }}>My Orders</Text>
+        <Text style={{
+            fontSize:16,
+            padding:15,
+            fontFamily:'MetroLight'
+        }}>My orders</Text>
     </View>
 );
 }
 
-export default HomeScreen;
+export default Review;

@@ -78,24 +78,23 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
   style={{
     flex:1,
     alignSelf:'flex-end',
-    bottom:50,
+    bottom:80,
     right:18,
   }}
-  onPress={() => navigation.navigate('Forgot Password')}>
+  onPress={() => navigation.navigate('ForgotPassword')}>
     <Text style={{
       color:'#222222',
       fontSize:15,
-      bottom:30,
       fontFamily:'MetroMedium',
     }}>Forgot your password?</Text>
   </TouchableOpacity>
 
   <TouchableOpacity onPress={() => alert('Login')}>
   <View style={{
-    flex:1,
+
     justifyContent:'flex-end',
     alignItems:'center',
-    bottom:155,
+    bottom:115,
     width:'100%',
   }}>
     <ButtonCustom color='red' text='LOGIN' />
@@ -109,7 +108,7 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
     <Text style={{
       color:'#222222',
       fontSize:15,
-      bottom:90,
+      bottom:50,
       fontFamily:'MetroMedium',
       fontSize:15,
     }}>Or sign up with social account</Text>
@@ -119,7 +118,7 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
     flexDirection:'row',
     columnGap:20,
     alignSelf:'center',
-    bottom:75
+    bottom:30
   }}>
     <View style={{
       backgroundColor:'white',

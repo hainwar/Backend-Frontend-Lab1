@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, TextInput, Image, TouchableOpacity } from "react-native";
+import { Text, View, ScrollView, TextInput, Image, TouchableOpacity } from "react-native";
 
 const TextInputCustom =({ name, color, secureTextEntry }) => (
     <TextInput
@@ -43,7 +43,7 @@ const ButtonCustom = ({ color, text}) => (
     );
   
   const SignUpPage = ({navigation}) => (
-    <View style={{
+    <ScrollView style={{
       flex:1,
       backgroundColor:'#F5F5F5'
     }}>
@@ -71,6 +71,7 @@ const ButtonCustom = ({ color, text}) => (
       alignItems:'center',
       justifyContent:'center',
       minHeight:250,
+      top:80
       }}>
         <TextInputCustom name='Name' color='#666666' />
         <TextInputCustom name='Email' color='#666666' />
@@ -82,9 +83,9 @@ const ButtonCustom = ({ color, text}) => (
       flex:1,
       alignSelf:'flex-end',
       right:18,
-      bottom:10
+      top:70
     }}
-    onPress={() => navigation.navigate('Login')}> 
+    onPress={() => navigation.navigate('LoginPage')}> 
     <Text style={{
       color:'#222222',
       fontSize:15,
@@ -99,8 +100,8 @@ const ButtonCustom = ({ color, text}) => (
       flex:1,
       justifyContent:'flex-end',
       alignItems:'center',
-      bottom:90,
       width:'100%',
+      top:100
     }}>
       <ButtonCustom color='red' text='SIGN UP' />
     </View>
@@ -112,7 +113,7 @@ const ButtonCustom = ({ color, text}) => (
       <Text style={{
         color:'#222222',
         fontSize:15,
-        bottom:30,
+        top:160,
         fontFamily:'MetroMedium',
       }}>
         Or sign up with social account</Text>
@@ -122,7 +123,8 @@ const ButtonCustom = ({ color, text}) => (
       flexDirection:'row',
       columnGap:20,
       alignSelf:'center',
-      bottom:15
+      top:180,
+      paddingBottom:40
     }}>
       <View style={{
         backgroundColor:'white',
@@ -147,7 +149,7 @@ const ButtonCustom = ({ color, text}) => (
         }}/>
       </View>
     </View>
-    </View>
+    </ScrollView>
   )
   
   export default SignUpPage;

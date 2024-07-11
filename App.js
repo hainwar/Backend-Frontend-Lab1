@@ -1,84 +1,41 @@
-// import * as React from 'react';
-// import { View, Text, Image, TouchableOpacity } from 'react-native';
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import LoginPage from './assets/components/LoginPage';
-// import SignUpPage from './assets/components/SignUpPage';
-// import ForgotPasswordPage from './assets/components/ForgotPasswordPage';
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import HomeAktif from './assets/img/homeAktif.jpeg';
-// import HomeNonAktif from './assets/img/home.jpeg';
-// import ShopAktif from './assets/img/shopAktif.jpeg';
-// import ShopNonAktif from './assets/img/shop.jpeg';
-// import HomeScreen from './assets/components/HomeScreen';
-
-// const Tab = createBottomTabNavigator();
-
-// function MyTabs(){
-//   return (
-//     <Tab.Navigator>
-//       <Tab.Screen name="Home" component={HomeScreen}
-//       options={{
-//         headerShown:false, tabBarIcon:({focused}) => (
-//         <Image source={focused ? HomeAktif : HomeNonAktif} style={{width:30, height:30}} />
-//       )
-//     }}
-//     />
-
-// <Tab.Screen name="Login" component={LoginPage}
-//       options={{
-//         headerShown:false, tabBarIcon:({focused}) => (
-//         <Image source={focused ? ShopAktif : ShopNonAktif} style={{width:30, height:30}} />
-//       )
-//     }}
-//     />
-
-// <Tab.Screen name="SignUp" component={SignUpPage}
-//       options={{
-//         headerShown:false, tabBarIcon:({focused}) => (
-//         <Image source={focused ? ShopAktif : ShopNonAktif} style={{width:30, height:30}} />
-//       )
-//     }}
-//     />
-// <Tab.Screen name="ForgotPassword" component={ForgotPasswordPage}
-//       options={{
-//         headerShown:false, tabBarIcon:({focused}) => (
-//         <Image source={focused ? ShopAktif : ShopNonAktif} style={{width:30, height:30}} />
-//       )
-//     }}
-//     />
-
-    
-//     </Tab.Navigator>
-//   )
-// }
-
-
-// const Stack = createNativeStackNavigator();
-// function App() {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator>
-//         <Stack.Screen name="Home" component={MyTabs} />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   )
-// }
-
-// export default App
-
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MyTabs from './assets/components/MyTabs';
+import LoginPage from './assets/components/LoginPage';
+import MyOrders from './assets/components/profilePage/MyOrders';
+import ShippingAddress from './assets/components/profilePage/ShippingAddress';
+import PaymentMethods from './assets/components/profilePage/PaymenMethods';  
+import PromoCodes from './assets/components/profilePage/PromoCodes';
+import Review from './assets/components/profilePage/Review';
+import Settings from './assets/components/profilePage/Settings';
+
+const primaryColor = '#FF6C44';
+const white = '#FFFFFF';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={MyTabs} />
+      <Stack.Navigator screenOptions={{
+        headerStyle: {
+          backgroundColor: primaryColor,
+      },
+      headerTintColor: white,
+      headerTitleStyle: {
+        fontWeight: 'bold'
+    }
+  }}
+    >
+        <Stack.Screen name="anwarStore" component={MyTabs}/>
+        <Stack.Screen name="LoginPage" component={LoginPage}/>
+        <Stack.Screen name="MyOrders" component={MyOrders}/>
+        <Stack.Screen name="ShippingAddress" component={ShippingAddress}/>
+        <Stack.Screen name="PaymentMethods" component={PaymentMethods}/>
+        <Stack.Screen name="PromoCodes" component={PromoCodes}/>
+        <Stack.Screen name="Review" component={Review}/>
+        <Stack.Screen name="Settings" component={Settings}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
