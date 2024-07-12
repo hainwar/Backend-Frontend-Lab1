@@ -187,7 +187,7 @@ return (
                         color: 'gray',
                         borderRadius: 20,
                         marginTop: 10,
-                        width: '20%',
+                        width: '30%',
                     }}>
                         <Text style={{
                             fontSize: 14,

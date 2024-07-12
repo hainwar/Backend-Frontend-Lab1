@@ -2,14 +2,18 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image } from 'react-native';
 import HomeScreen from './HomeScreen';
-import LoginPage from './LoginPage';
-import SignUpPage from './SignUpPage';
-import ForgotPasswordPage from './ForgotPasswordPage';
+import ShopPage from './ShopPage';
+import BagPage from './BagPage';
+import FavoritesPage from './FavoritesPage';
 import ProfilePage from './ProfilePage';
 import HomeAktif from '../img/icon-tabs/homeAktif.png';
 import HomeNonAktif from '../img/icon-tabs/home.png';
 import ShopAktif from '../img/icon-tabs/shopAktif.png';
 import ShopNonAktif from '../img/icon-tabs/shop.png';
+import BagAktif from '../img/icon-tabs/bagAktif.png';
+import BagNonAktif from '../img/icon-tabs/bag.png';
+import FavoritesAktif from '../img/icon-tabs/favoritesAktif.png';
+import FavoritesNonAktif from '../img/icon-tabs/favorites.png';
 import ProfileAktif from '../img/icon-tabs/profileAktif.png';
 import ProfileNonAktif from '../img/icon-tabs/profile.png';
 
@@ -29,8 +33,8 @@ return (
         }}
       />
       <Tab.Screen
-        name="SignUp"
-        component={SignUpPage}
+        name="Shop"
+        component={ShopPage}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => (
@@ -39,22 +43,22 @@ return (
         }}
       />
         <Tab.Screen
-          name="Login"
-          component={LoginPage}
+          name="Bag"
+          component={BagPage}
           options={{
             headerShown: false,
             tabBarIcon: ({ focused }) => (
-              <Image source={focused ? ShopAktif : ShopNonAktif} style={{ width: 30, height: 30 }} />
+              <Image source={focused ? BagAktif : BagNonAktif} style={{ width: 30, height: 30 }} />
             ),
           }}
         />
       <Tab.Screen
-        name="ForgotPassword"
-        component={ForgotPasswordPage}
+        name="Favorites"
+        component={FavoritesPage}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <Image source={focused ? ShopAktif : ShopNonAktif} style={{ width: 30, height: 30 }} />
+            <Image source={focused ? FavoritesAktif : FavoritesNonAktif} style={{ width: 30, height: 30 }} />
           ),
         }}
       />
@@ -68,6 +72,7 @@ return (
           ),
         }}
       />
+
     </Tab.Navigator>
   );
 };

@@ -87,6 +87,7 @@ const ButtonCustom = ({ color, text}) => (
     }}
     onPress={() => navigation.navigate('LoginPage')}> 
     <Text style={{
+      flex:1,
       color:'#222222',
       fontSize:15,
       fontFamily:'MetroMedium',
@@ -95,7 +96,7 @@ const ButtonCustom = ({ color, text}) => (
     </Text>
     </TouchableOpacity>
 
-    <TouchableOpacity onPress={() => alert('Akun Anda Berhasil Dibuat')}>
+    {/* <TouchableOpacity onPress={() => alert('Akun Anda Berhasil Dibuat')}>
     <View style={{
       flex:1,
       justifyContent:'flex-end',
@@ -105,7 +106,19 @@ const ButtonCustom = ({ color, text}) => (
     }}>
       <ButtonCustom color='red' text='SIGN UP' />
     </View>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+
+      <View style={{
+    justifyContent:'flex-end',
+    top:95,
+  }}>
+    <TouchableOpacity onPress={() => alert('Sign up')} style={{
+      width:'100%',
+      alignItems:'center',
+    }}>
+    <ButtonCustom color='red' text='SIGN UP' />
+    </TouchableOpacity>
+  </View>
 
     <View style={{
       alignSelf:'center',
