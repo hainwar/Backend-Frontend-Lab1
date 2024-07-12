@@ -6,10 +6,12 @@ import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
 import ForgotPasswordPage from './ForgotPasswordPage';
 import ProfilePage from './ProfilePage';
-import HomeAktif from '../img/homeAktif.jpeg';
-import HomeNonAktif from '../img/home.jpeg';
-import ShopAktif from '../img/shopAktif.jpeg';
-import ShopNonAktif from '../img/shop.jpeg';
+import HomeAktif from '../img/icon-tabs/homeAktif.png';
+import HomeNonAktif from '../img/icon-tabs/home.png';
+import ShopAktif from '../img/icon-tabs/shopAktif.png';
+import ShopNonAktif from '../img/icon-tabs/shop.png';
+import ProfileAktif from '../img/icon-tabs/profileAktif.png';
+import ProfileNonAktif from '../img/icon-tabs/profile.png';
 
 const Tab = createBottomTabNavigator();
 
@@ -62,7 +64,7 @@ return (
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <Image source={focused ? ShopAktif : ShopNonAktif} style={{ width: 30, height: 30 }} />
+            <Image source={focused ? ProfileAktif : ProfileNonAktif} style={{ width: 30, height: 30 }} />
           ),
         }}
       />

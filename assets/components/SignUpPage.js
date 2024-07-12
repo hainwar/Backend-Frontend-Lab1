@@ -116,39 +116,32 @@ const ButtonCustom = ({ color, text}) => (
         top:160,
         fontFamily:'MetroMedium',
       }}>
-        Or sign up with social account</Text>
+        Or sign up with social account.</Text>
     </View>
 
     <View style={{
-      flexDirection:'row',
-      columnGap:20,
       alignSelf:'center',
-      top:180,
-      paddingBottom:40
+      top:110,
     }}>
-      <View style={{
-        backgroundColor:'white',
-        borderRadius:10,
-        padding:10
-      }}>
-        <Image source={require('../img/google.png')} style={{
-          width: 50,
-          height: 30,
-          resizeMode: 'contain'
-        }}/>
-      </View>
-      <View style={{
-        backgroundColor:'white',
-        borderRadius:10,
-        padding:10
-      }}>
-        <Image source={require('../img/facebook.png')} style={{
-          width: 50,
-          height: 30,
-          resizeMode: 'contain'
-        }}/>
-      </View>
-    </View>
+      <Image source={require('../img/go-log.png')} style={{
+        width: 180,
+        height: 180,
+        resizeMode: 'contain'
+      }}/>
+      <Image source={require('../img/fb-log.png')} style={{
+        bottom: 140,
+        width: 180,
+        height: 180,
+        resizeMode: 'contain'
+      }}/>
+      <Image source={require('../img/apple-log.png')} style={{
+        bottom: 280,
+        width: 180,
+        height: 180,
+        resizeMode: 'contain'
+      }}/>
+      
+    </View> 
     </ScrollView>
   )
   

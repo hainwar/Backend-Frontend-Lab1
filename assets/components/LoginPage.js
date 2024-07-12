@@ -68,7 +68,7 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
     alignSelf:'center',
     alignItems:'center',
     minHeight:250,
-    top:19
+    top:120,
   }}>
     <TextInputCustom name='Email' color='#666666' />
     <TextInputCustom name='Password' color='#666666'secureTextEntry={true}/>
@@ -78,7 +78,6 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
   style={{
     flex:1,
     alignSelf:'flex-end',
-    bottom:80,
     right:18,
   }}
   onPress={() => navigation.navigate('ForgotPassword')}>
@@ -86,6 +85,7 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
       color:'#222222',
       fontSize:15,
       fontFamily:'MetroMedium',
+      top:20,
     }}>Forgot your password?</Text>
   </TouchableOpacity>
 
@@ -94,8 +94,8 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
 
     justifyContent:'flex-end',
     alignItems:'center',
-    bottom:115,
     width:'100%',
+    top:70,
   }}>
     <ButtonCustom color='red' text='LOGIN' />
   </View>
@@ -108,40 +108,33 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
     <Text style={{
       color:'#222222',
       fontSize:15,
-      bottom:50,
+      top:130,
       fontFamily:'MetroMedium',
       fontSize:15,
     }}>Or sign up with social account</Text>
   </View>
 
   <View style={{
-    flexDirection:'row',
-    columnGap:20,
-    alignSelf:'center',
-    bottom:30
-  }}>
-    <View style={{
-      backgroundColor:'white',
-      borderRadius:10,
-      padding:10
+      alignSelf:'center',
+      top:80,
     }}>
-    <Image source={require('../img/google.png')} style={{
-      height:30,
-      width:50,
-      resizeMode:'contain',
-    }}/>
-  </View>
-    <View style={{
-      backgroundColor:'white',
-      borderRadius:10,
-      padding:10
-    }}>
-    <Image source={require('../img/facebook.png')} style={{
-      height:30,
-      width:50,
-      resizeMode:'contain',
-    }}/>
-  </View>
+      <Image source={require('../img/go-log.png')} style={{
+        width: 180,
+        height: 180,
+        resizeMode: 'contain'
+      }}/>
+      <Image source={require('../img/fb-log.png')} style={{
+        bottom: 140,
+        width: 180,
+        height: 180,
+        resizeMode: 'contain'
+      }}/>
+      <Image source={require('../img/apple-log.png')} style={{
+        bottom: 280,
+        width: 180,
+        height: 180,
+        resizeMode: 'contain'
+      }}/>
   </View>
   </View>
 )
