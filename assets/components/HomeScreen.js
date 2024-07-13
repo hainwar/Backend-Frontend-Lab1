@@ -54,7 +54,7 @@ return (
             position:'absolute',
             left:20,
             top:70,
-        }} onPress={() => navigation.navigate('SignUpPage')} >
+        }} onPress={() => navigation.navigate('LoginPage')} >
             <Text style={{
                 color:'white',
                 fontFamily:'MetroLight',

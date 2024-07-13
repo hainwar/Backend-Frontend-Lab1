@@ -74,7 +74,8 @@ const ShopPage = () => {
       <Text style={{
         fontSize:34,
         color:'#222222',
-        fontFamily:'MetroBold'
+        fontFamily:'MetroBold',
+        marginBottom:20
       }}>Categories</Text>
 
       <View style={{

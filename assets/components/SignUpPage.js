@@ -96,18 +96,6 @@ const ButtonCustom = ({ color, text}) => (
     </Text>
     </TouchableOpacity>
 
-    {/* <TouchableOpacity onPress={() => alert('Akun Anda Berhasil Dibuat')}>
-    <View style={{
-      flex:1,
-      justifyContent:'flex-end',
-      alignItems:'center',
-      width:'100%',
-      top:100
-    }}>
-      <ButtonCustom color='red' text='SIGN UP' />
-    </View>
-      </TouchableOpacity> */}
-
       <View style={{
     justifyContent:'flex-end',
     top:95,
