@@ -11,6 +11,8 @@ import PaymentMethods from './assets/components/profilePage/PaymenMethods';
 import PromoCodes from './assets/components/profilePage/PromoCodes';
 import Review from './assets/components/profilePage/Review';
 import Settings from './assets/components/profilePage/Settings';
+import ShopPage from './assets/components/ShopPage';
+import FavoritesPage from './assets/components/FavoritesPage';
 
 const primaryColor = '#fff';
 const darkRed = '#8B0000';
@@ -33,6 +35,8 @@ function App() {
         <Stack.Screen name="anwarStore" component={MyTabs}/>
         <Stack.Screen name="SignUpPage" component={SignUpPage}/>
         <Stack.Screen name="LoginPage" component={LoginPage}/>
+        <Stack.Screen name="Shop" component={ShopPage}/>
+        <Stack.Screen name="Favorites" component={FavoritesPage}/>
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordPage}/>
         <Stack.Screen name="MyOrders" component={MyOrders}/>
         <Stack.Screen name="ShippingAddress" component={ShippingAddress}/>

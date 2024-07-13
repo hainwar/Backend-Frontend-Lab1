@@ -98,8 +98,9 @@ const BagPage = () => {
           }}>
 
             <Image source={item.image} style={{
-              width: 100,
-              height: 100,
+              width: 80,
+              height: 90,
+              resizeMode: 'contain',
               borderRadius: 5,
               marginBottom: 10
             }} />
@@ -196,13 +197,26 @@ const BagPage = () => {
         onChangeText={setPromoCode}
         style={{
           height: 40,
-          borderColor: '#DB3022',
+          borderColor: 'gray',
           borderWidth: 1,
           borderRadius: 5,
           paddingLeft: 10,
           marginVertical: 10
         }} />
-          <Button title='Apply Promo Code' color='#DB3022' onPress={() => alert('Promo code ${promocode} applied')} />
+
+        <TouchableOpacity style={{
+          backgroundColor: 'gray',
+          padding: 10,
+          borderRadius: 5,
+          alignItems: 'center'
+        }} onPress={() => alert(`Promo code ${promoCode}`)} >
+          <Text style={{
+            color: '#fff',
+            fontFamily: 'MetroMedium',
+          }}>
+            Apply Promo Code
+          </Text>
+          </TouchableOpacity>
         </View>
 
         <View style={{
@@ -215,12 +229,26 @@ const BagPage = () => {
             fontSize: 18,
             color: '#222222',
             fontFamily: 'MetroBold',
+            marginBottom: 10
           }}>
             Total: ${getTotalPrice()}
           </Text>
           
-          <Button title='Checkout' color='#DB3022' onPress={() => alert('Checkout')} 
-            style={{marginTop: 10}} />
+          <TouchableOpacity style={{
+          backgroundColor: '#DB3022',
+          padding: 15,
+          borderRadius: 20,
+          alignItems: 'center',
+        }} onPress={() => alert(`Promo code ${promoCode}`)} >
+          <Text style={{
+            color: '#fff',
+            fontFamily: 'MetroBold',
+            fontSize: 16,
+            alignItems: 'center'
+          }}>
+            CHECK OUT
+          </Text>
+          </TouchableOpacity>
           </View>
     </ScrollView>
   )
