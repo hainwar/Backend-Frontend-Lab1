@@ -16,6 +16,7 @@ import FavoritesAktif from '../assets/img/icon-tabs/favoritesAktif.png';
 import FavoritesNonAktif from '../assets/img/icon-tabs/favorites.png';
 import ProfileAktif from '../assets/img/icon-tabs/profileAktif.png';
 import ProfileNonAktif from '../assets/img/icon-tabs/profile.png';
+import LoginPage from '../screens/ProfileScreens/LoginPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,7 +25,7 @@ return (
     <Tab.Navigator>
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={LoginPage}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => (

@@ -54,7 +54,7 @@ return (
             position:'absolute',
             left:20,
             top:70,
-        }} onPress={() => navigation.navigate('LoginPage')} >
+        }} onPress={() => navigation.navigate('Shop')} >
             <Text style={{
                 color:'white',
                 fontFamily:'MetroLight',

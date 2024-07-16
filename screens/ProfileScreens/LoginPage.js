@@ -1,28 +1,29 @@
-import { Text, View, TextInput, Image, TouchableOpacity } from "react-native";
+import { Text, View, TextInput, Image, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
+import useCustomFonts from "../../styles/Fonts";
 
 const TextInputCustom =({ name, color, secureTextEntry }) => (
-    <TextInput
-    placeholder={` ${name}`}
-    secureTextEntry={secureTextEntry}
-    style={{
-      borderColor: 'gray',
-          width:'90%',
-          height:64,
-          marginBottom:10,
-          paddingHorizontal:10,
-          color: color,
-          backgroundColor:'white',
-          shadowColor:'black',
-          shadowRadius: 1,
-          shadowOpacity:0.2,
-          fontFamily:'MetroLight',
+  <TextInput
+  placeholder={` ${name}`}
+  secureTextEntry={secureTextEntry}
+  style={{
+    borderColor: 'gray',
+    width:'90%',
+    height:64,
+    marginBottom:10,
+    paddingHorizontal:10,
+    color: color,
+    backgroundColor:'white',
+    shadowColor:'black',
+    shadowRadius: 1,
+    shadowOpacity:0.2,
+    fontFamily:'MetroLight',
           fontSize:15,
         }}
         />
       )
-    
-    const ButtonCustom = ({ color, text}) => (
+      
+      const ButtonCustom = ({ color, text}) => (
         <View style={{
           backgroundColor: color,
           width: '90%',
@@ -41,12 +42,21 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
         </Text>
         </View>
     );
-  
-  const LoginPage = ({navigation}) => (
-    <View style={{
-    flex:1,
-    backgroundColor:'#F5F5F5'
-  }}>
+    
+    const LoginPage = ({navigation}) => {
+      const [loaded] = useCustomFonts();
+      if (!loaded) {
+          return (
+              <Text>Loading...</Text>
+          )
+  }
+
+  return (
+      
+      <ScrollView style={{
+        flex:1,
+        backgroundColor:'#F5F5F5'
+      }}>
     <View style={{
       flex:1,
       alignItems:'flex-start',
@@ -93,13 +103,27 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
     justifyContent:'flex-end',
     top:70,
   }}>
-    <TouchableOpacity onPress={() => alert('Login')} style={{
+    <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={{
       width:'100%',
       alignItems:'center',
     }}>
     <ButtonCustom color='red' text='LOGIN' />
     </TouchableOpacity>
   </View>
+
+  <TouchableOpacity
+  style={{
+    flex:1,
+    alignSelf:'center',
+    top:85,
+  }}
+  onPress={() => navigation.navigate('SignUpPage')}>
+    <Text style={{
+      color:'#222222',
+      fontSize:15,
+      fontFamily:'MetroMedium',
+    }}>Don't have an account?</Text>
+  </TouchableOpacity>
 
   <View style={{
     alignSelf:'center',
@@ -108,7 +132,7 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
     <Text style={{
       color:'#222222',
       fontSize:15,
-      top:130,
+      top:160,
       fontFamily:'MetroMedium',
       fontSize:15,
     }}>Or sign up with social account</Text>
@@ -116,7 +140,7 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
 
   <View style={{
       alignSelf:'center',
-      top:80,
+      top:110,
     }}>
       <Image source={require('../../assets/img/go-log.png')} style={{
         width: 180,
@@ -136,7 +160,10 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
         resizeMode: 'contain'
       }}/>
   </View>
-  </View>
+  </ScrollView>
 )
+
+}
+
 
 export default LoginPage

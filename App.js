@@ -13,6 +13,8 @@ import Review from './screens/ProfileScreens/Review';
 import Settings from './screens/ProfileScreens/Settings';
 import ShopPage from './screens/ProfileScreens/ShopPage';
 import FavoritesPage from './screens/ProfileScreens/FavoritesPage';
+import HomeScreen from './screens/ProfileScreens/HomeScreen';
+
 
 const primaryColor = '#fff';
 const darkRed = '#8B0000';
@@ -44,6 +46,7 @@ function App() {
         <Stack.Screen name="PromoCodes" component={PromoCodes}/>
         <Stack.Screen name="Review" component={Review}/>
         <Stack.Screen name="Settings" component={Settings}/>
+        <Stack.Screen name="HomeScreen" component={HomeScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
