@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, View } from "react-native";
-import useCustomFonts from "../../fonts/Fonts";
+import useCustomFonts from "../../styles/Fonts";
 
-const ShippingAddress = () => {
+const PaymentMethods = () => {
     const [loaded] = useCustomFonts();
     if (!loaded) {
         return (
@@ -30,4 +30,4 @@ return (
 );
 }
 
-export default ShippingAddress;
+export default PaymentMethods;

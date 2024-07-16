@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, Image, TouchableOpacity} from "react-native";
-import useCustomFonts from "../fonts/Fonts";
+import useCustomFonts from "../../styles/Fonts";
 
 const HomeScreen = ({navigation}) => {
     const [loaded] = useCustomFonts();
@@ -15,7 +15,7 @@ return (
         flex:1,
         backgroundColor:'#D2B48C'
     }}>
-        <Image source={require('../img/hero-home.png')} style={{
+        <Image source={require('../../assets/img/hero-home.png')} style={{
             width:'55%',
             height:550,
             top:50,

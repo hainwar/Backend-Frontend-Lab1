@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import useCustomFonts from '../fonts/Fonts';
+import useCustomFonts from '../../styles/Fonts';
 
-const profileImage = require('../img/profile.jpeg');
+const profileImage = require('../../assets/img/profile.jpeg');
 const userName = 'Hairul Anwar';
 const userEmail = 'hairulanwar@gmail.com';
 

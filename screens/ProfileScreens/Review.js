@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-import useCustomFonts from "../../fonts/Fonts";
+import useCustomFonts from "../../styles/Fonts";
 
 const Review = () => {
     const [loaded] = useCustomFonts();

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Text, View, ScrollView, TouchableOpacity } from "react-native";
-import useCustomFonts from "../../fonts/Fonts";
+import useCustomFonts from "../../styles/Fonts";
 
 const MyOrders = () => {
     const [loaded] = useCustomFonts();

@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
 import React, {useState} from 'react';
-import useCustomFonts from '../fonts/Fonts';
+import useCustomFonts from '../../styles/Fonts';
 
 const FavoritesPage = () => {
   const [fontLoaded] = useCustomFonts();
@@ -9,19 +9,19 @@ const FavoritesPage = () => {
       id: 1,
       name: 'Man Shirt Blue',
       price: 50,
-      image: require('../img/product/shirt.png')
+      image: require('../../assets/img/product/shirt.png')
     },
     {
       id: 2,
       name: 'Man Shirt Black',
       price: 60,
-      image: require('../img/product/shirt2.png')
+      image: require('../../assets/img/product/shirt2.png')
     },
     {
       id: 3,
       name: 'Dress Nikon',
       price: 70,
-      image: require('../img/product/dress.png')
+      image: require('../../assets/img/product/dress.png')
     }, 
   ]);
 

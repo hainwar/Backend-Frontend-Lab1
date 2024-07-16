@@ -1,21 +1,21 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image } from 'react-native';
-import HomeScreen from './HomeScreen';
-import ShopPage from './ShopPage';
-import BagPage from './BagPage';
-import FavoritesPage from './FavoritesPage';
-import ProfilePage from './ProfilePage';
-import HomeAktif from '../img/icon-tabs/homeAktif.png';
-import HomeNonAktif from '../img/icon-tabs/home.png';
-import ShopAktif from '../img/icon-tabs/shopAktif.png';
-import ShopNonAktif from '../img/icon-tabs/shop.png';
-import BagAktif from '../img/icon-tabs/bagAktif.png';
-import BagNonAktif from '../img/icon-tabs/bag.png';
-import FavoritesAktif from '../img/icon-tabs/favoritesAktif.png';
-import FavoritesNonAktif from '../img/icon-tabs/favorites.png';
-import ProfileAktif from '../img/icon-tabs/profileAktif.png';
-import ProfileNonAktif from '../img/icon-tabs/profile.png';
+import HomeScreen from '../screens/ProfileScreens/HomeScreen';
+import ShopPage from '../screens/ProfileScreens/ShopPage';
+import BagPage from '../screens/ProfileScreens/BagPage';
+import FavoritesPage from '../screens/ProfileScreens/FavoritesPage';
+import ProfilePage from '../screens/ProfileScreens/ProfilePage';
+import HomeAktif from '../assets/img/icon-tabs/homeAktif.png';
+import HomeNonAktif from '../assets/img/icon-tabs/home.png';
+import ShopAktif from '../assets/img/icon-tabs/shopAktif.png';
+import ShopNonAktif from '../assets/img/icon-tabs/shop.png';
+import BagAktif from '../assets/img/icon-tabs/bagAktif.png';
+import BagNonAktif from '../assets/img/icon-tabs/bag.png';
+import FavoritesAktif from '../assets/img/icon-tabs/favoritesAktif.png';
+import FavoritesNonAktif from '../assets/img/icon-tabs/favorites.png';
+import ProfileAktif from '../assets/img/icon-tabs/profileAktif.png';
+import ProfileNonAktif from '../assets/img/icon-tabs/profile.png';
 
 const Tab = createBottomTabNavigator();
 

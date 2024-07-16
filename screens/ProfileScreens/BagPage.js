@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { View, Text, ScrollView, TouchableOpacity, Image, Button, TextInput } from 'react-native'
-import useCustomFonts from '../fonts/Fonts';
+import useCustomFonts from '../../styles/Fonts';
 
 const BagPage = () => {
   const [fontsLoaded] = useCustomFonts();
@@ -10,35 +10,35 @@ const BagPage = () => {
       name: 'Shirt Blue',
       price: 50,
       quantity: 10,
-      image: require('../img/product/shirt.png')
+      image: require('../../assets/img/product/shirt.png')
     },
     {
       id: 2,
       name: 'Shirt Black',
       price: 50,
       quantity: 10,
-      image: require('../img/product/shirt2.png')
+      image: require('../../assets/img/product/shirt2.png')
     },
     {
       id: 3,
       name: 'Dress',
       price: 50,
       quantity: 10,
-      image: require('../img/product/dress.png')
+      image: require('../../assets/img/product/dress.png')
     },
     {
       id: 4,
       name: 'Dress Yellow',
       price: 50,
       quantity: 10,
-      image: require('../img/product/dress2.png')
+      image: require('../../assets/img/product/dress2.png')
     },
     {
       id: 5,
       name: 'Shirt Kids',
       price: 50,
       quantity: 10,
-      image: require('../img/product/kids.png')
+      image: require('../../assets/img/product/kids.png')
     },
   ])
 
@@ -84,7 +84,6 @@ const BagPage = () => {
         marginBottom: 20
       }}>My Bag
       </Text>
-
       {carItems.length > 0 ? (
         carItems.map((item) => (
           <View key={item.id} style={{
