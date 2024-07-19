@@ -24,7 +24,9 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{
+      <Stack.Navigator
+      initialRouteName='LoginPage'
+      screenOptions={{
         headerStyle: {
           backgroundColor: primaryColor,
       },
@@ -34,9 +36,9 @@ function App() {
     }
   }}
     >
+        <Stack.Screen name="LoginPage" component={LoginPage}/>
         <Stack.Screen name="anwarStore" component={MyTabs}/>
         <Stack.Screen name="SignUpPage" component={SignUpPage}/>
-        <Stack.Screen name="LoginPage" component={LoginPage}/>
         <Stack.Screen name="Shop" component={ShopPage}/>
         <Stack.Screen name="Favorites" component={FavoritesPage}/>
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordPage}/>

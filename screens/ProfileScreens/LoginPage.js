@@ -51,6 +51,10 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
           )
   }
 
+  const handleLogin = () => {
+    navigation.replace('anwarStore');
+  }
+
   return (
       
       <ScrollView style={{
@@ -103,7 +107,7 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
     justifyContent:'flex-end',
     top:70,
   }}>
-    <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={{
+    <TouchableOpacity onPress={handleLogin} style={{
       width:'100%',
       alignItems:'center',
     }}>

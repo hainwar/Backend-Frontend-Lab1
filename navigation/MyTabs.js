@@ -25,7 +25,7 @@ return (
     <Tab.Navigator>
       <Tab.Screen
         name="Home"
-        component={LoginPage}
+        component={HomeScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => (
