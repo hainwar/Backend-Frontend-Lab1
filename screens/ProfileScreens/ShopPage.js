@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, Image, Button } from 'react-native'
 import useCustomFonts from '../../styles/Fonts'
 
-const ShopPage = () => {
+const ShopPage = ({navigation}) => {
   const [fontLoaded] = useCustomFonts();
   const [selectedCategory, setSelectedCategory] = useState('man');
+  const [bagItems, setBagItems] = useState([]);
 
   if (!fontLoaded) {
     return (
@@ -63,6 +64,19 @@ const ShopPage = () => {
   }
 
   const displayItems = items[selectedCategory];
+
+  const addToBag = (item) => {
+    const itemIndex = bagItems.findIndex((bagItem) => bagItem.id === item.id);
+
+    if (itemIndex !== -1) {
+      const updateBagItems = [...bagItems];
+      updateBagItems[itemIndex] = { ...updateBagItems[itemIndex], quantity: updateBagItems[itemIndex].quantity + 1 };
+      setBagItems(updateBagItems);
+  } else {
+    setBagItems([...bagItems, { ...item, quantity: 1 }]);
+  }
+  alert(`${item.name} added to bag`);
+}
 
   return (
     <ScrollView style={{
@@ -176,6 +190,8 @@ const ShopPage = () => {
         }}>
            ${item.price} 
         </Text>
+
+        <Button title='Buy/Add' onPress={() => addToBag(item)} />
     </View>
   ))
 ) : (
@@ -189,6 +205,23 @@ const ShopPage = () => {
     No items in this category
   </Text>
 )}
+
+<TouchableOpacity style={{
+  backgroundColor: '#DB3022',
+  padding: 15,
+  borderRadius: 20,
+  marginTop: 20,
+  alignItems: 'center'
+}} onPress={() => navigation.navigate('Bag', {bagItems}) }>
+  <Text style={{
+    fontSize: 18,
+    fontFamily: 'MetroBold',
+    color: 'white'
+  }}>
+    View Bag
+  </Text>
+
+</TouchableOpacity>
 </ScrollView>
   )
 }
