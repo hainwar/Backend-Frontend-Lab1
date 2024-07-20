@@ -1,5 +1,6 @@
 import { Text, View, TextInput, TouchableOpacity } from "react-native";
 import React from "react";
+import LoginPage from "./LoginPage";
 
 const TextInputCustom =({ name, color }) => (
     <TextInput
@@ -43,7 +44,7 @@ const TextInputCustom =({ name, color }) => (
         </View>
     );
   
-  const ForgotPasswordPage = () => (
+  const ForgotPasswordPage = ({navigation}) => (
     <View style={{
 
       backgroundColor:'#F5F5F5'
@@ -82,7 +83,7 @@ const TextInputCustom =({ name, color }) => (
     <TextInputCustom name='Email' color='#666666' />
   </View>
 
-  <TouchableOpacity onPress={() => alert('Email sent!')}>
+  <TouchableOpacity onPress={() => navigation.navigate(LoginPage)}>
   <View style={{
     flex:1,
     justifyContent:'flex-end',

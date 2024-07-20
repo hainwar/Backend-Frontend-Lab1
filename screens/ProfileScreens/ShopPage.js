@@ -191,7 +191,19 @@ const ShopPage = ({navigation}) => {
            ${item.price} 
         </Text>
 
-        <Button title='Buy/Add' onPress={() => addToBag(item)} />
+        <TouchableOpacity style={{
+          backgroundColor: '#32CD32',
+          padding: 10,
+          borderRadius: 20,
+          marginTop: 10,
+          alignItems: 'center'
+        }} onPress={() => addToBag(item)}>
+          <Text style={{
+            fontSize: 12,
+            fontFamily: 'MetroMedium',
+            color: 'white'
+          }}>BUY/ADD</Text>
+        </TouchableOpacity>
     </View>
   ))
 ) : (
