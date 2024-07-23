@@ -1,6 +1,6 @@
 import { Text, View, TextInput, Image, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
-import useCustomFonts from "../../styles/Fonts";
+import useCustomFonts from "../styles/Fonts";
 
 const TextInputCustom =({ name, color, secureTextEntry }) => (
   <TextInput
@@ -146,18 +146,18 @@ const TextInputCustom =({ name, color, secureTextEntry }) => (
       alignSelf:'center',
       top:110,
     }}>
-      <Image source={require('../../assets/img/go-log.png')} style={{
+      <Image source={require('../assets/img/go-log.png')} style={{
         width: 180,
         height: 180,
         resizeMode: 'contain'
       }}/>
-      <Image source={require('../../assets/img/fb-log.png')} style={{
+      <Image source={require('../assets/img/fb-log.png')} style={{
         bottom: 140,
         width: 180,
         height: 180,
         resizeMode: 'contain'
       }}/>
-      <Image source={require('../../assets/img/apple-log.png')} style={{
+      <Image source={require('../assets/img/apple-log.png')} style={{
         bottom: 280,
         width: 180,
         height: 180,

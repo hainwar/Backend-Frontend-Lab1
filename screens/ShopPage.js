@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text, ScrollView, TouchableOpacity, Image, Button } from 'react-native'
-import useCustomFonts from '../../styles/Fonts'
+import useCustomFonts from '../styles/Fonts'
 
 const ShopPage = ({navigation}) => {
   const [fontLoaded] = useCustomFonts();
@@ -19,14 +19,14 @@ const ShopPage = ({navigation}) => {
         id: 1,
         name:'Man Shirt Blue',
         price: 50,
-        image: require('../../assets/img/product/shirt.png')
+        image: require('../assets/img/product/shirt.png')
       },
 
       {
         id: 2,
         name: 'Man Shirt Black',
         price: 60,
-        image: require('../../assets/img/product/shirt2.png')
+        image: require('../assets/img/product/shirt2.png')
       },
     ],
 
@@ -35,14 +35,14 @@ const ShopPage = ({navigation}) => {
         id: 3,
         name: 'Woman Dress Nikon',
         price: 70,
-        image: require('../../assets/img/product/dress.png')
+        image: require('../assets/img/product/dress.png')
       },
         
         {
           id: 4,
           name: 'Woman Dress Canon',
           price: 80,
-          image: require('../../assets/img/product/dress2.png')
+          image: require('../assets/img/product/dress2.png')
         },
       ],
 
@@ -51,14 +51,14 @@ const ShopPage = ({navigation}) => {
           id: 5,
           name: 'Kids Shirt Kodak',
           price: 30,
-          image: require('../../assets/img/product/kids.png')
+          image: require('../assets/img/product/kids.png')
         },
 
         {
           id: 6,
           name: 'Kids Shirt Sony',
           price: 40,
-          image: require('../../assets/img/product/kids2.png')
+          image: require('../assets/img/product/kids2.png')
         },
       ],
   }

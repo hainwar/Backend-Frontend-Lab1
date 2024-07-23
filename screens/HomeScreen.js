@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, ScrollView, Image, TouchableOpacity} from "react-native";
-import useCustomFonts from "../../styles/Fonts";
+import useCustomFonts from "../styles/Fonts";
 
 const HomeScreen = ({navigation}) => {
     const [loaded] = useCustomFonts();
@@ -19,7 +19,7 @@ return (
         <View style={{
             backgroundColor:'#696969',
         }}>
-        <Image source={require('../../assets/img/hero-home.png')} style={{
+        <Image source={require('../assets/img/hero-home.png')} style={{
             width:'55%',
             height:500,
             top:30,
@@ -113,7 +113,7 @@ return (
                         fontFamily:'MetroMedium',
                         fontSize:12,
                     }}>NEW</Text>
-                <Image source={require('../../assets/img/product/shirt.png')} style={{
+                <Image source={require('../assets/img/product/shirt.png')} style={{
                     width:130,
                     height:130,
                     resizeMode:'contain',
@@ -142,7 +142,7 @@ return (
                         fontFamily:'MetroMedium',
                         fontSize:12,
                     }}>NEW</Text>
-                <Image source={require('../../assets/img/product/shirt2.png')} style={{
+                <Image source={require('../assets/img/product/shirt2.png')} style={{
                     width:130,
                     height:130,
                     resizeMode:'contain',
@@ -171,7 +171,7 @@ return (
                         fontFamily:'MetroMedium',
                         fontSize:12,
                     }}>NEW</Text>
-                <Image source={require('../../assets/img/product/kids.png')} style={{
+                <Image source={require('../assets/img/product/kids.png')} style={{
                     width:130,
                     height:130,
                     resizeMode:'contain',

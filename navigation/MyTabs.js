@@ -1,11 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image } from 'react-native';
-import HomeScreen from '../screens/ProfileScreens/HomeScreen';
-import ShopPage from '../screens/ProfileScreens/ShopPage';
-import BagPage from '../screens/ProfileScreens/BagPage';
-import FavoritesPage from '../screens/ProfileScreens/FavoritesPage';
-import ProfilePage from '../screens/ProfileScreens/ProfilePage';
+import HomeScreen from '../screens/HomeScreen';
+import ShopPage from '../screens/ShopPage';
+import BagPage from '../screens/BagPage';
+import FavoritesPage from '../screens/FavoritesPage';
+import ProfilePage from '../screens/ProfilePage';
 import HomeAktif from '../assets/img/icon-tabs/homeAktif.png';
 import HomeNonAktif from '../assets/img/icon-tabs/home.png';
 import ShopAktif from '../assets/img/icon-tabs/shopAktif.png';
@@ -16,7 +16,6 @@ import FavoritesAktif from '../assets/img/icon-tabs/favoritesAktif.png';
 import FavoritesNonAktif from '../assets/img/icon-tabs/favorites.png';
 import ProfileAktif from '../assets/img/icon-tabs/profileAktif.png';
 import ProfileNonAktif from '../assets/img/icon-tabs/profile.png';
-import LoginPage from '../screens/ProfileScreens/LoginPage';
 
 const Tab = createBottomTabNavigator();
 

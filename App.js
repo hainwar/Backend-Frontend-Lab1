@@ -2,18 +2,18 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MyTabs from './navigation/MyTabs';
-import SignUpPage from './screens/ProfileScreens/SignUpPage';
-import LoginPage from './screens/ProfileScreens/LoginPage';
-import ForgotPasswordPage from './screens/ProfileScreens/ForgotPasswordPage';
+import SignUpPage from './screens/SignUpPage';
+import LoginPage from './screens/LoginPage';
+import ForgotPasswordPage from './screens/ForgotPasswordPage';
 import MyOrders from './screens/ProfileScreens/MyOrders';
 import ShippingAddress from './screens/ProfileScreens/ShippingAddress';
 import PaymentMethods from './screens/ProfileScreens/PaymenMethods';  
 import PromoCodes from './screens/ProfileScreens/PromoCodes';
 import Review from './screens/ProfileScreens/Review';
 import Settings from './screens/ProfileScreens/Settings';
-import ShopPage from './screens/ProfileScreens/ShopPage';
-import FavoritesPage from './screens/ProfileScreens/FavoritesPage';
-import HomeScreen from './screens/ProfileScreens/HomeScreen';
+import ShopPage from './screens/ShopPage';
+import FavoritesPage from './screens/FavoritesPage';
+import HomeScreen from './screens/HomeScreen';
 
 
 const primaryColor = '#fff';

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { View, Text, ScrollView, TouchableOpacity, Image, TextInput } from "react-native";
-import useCustomFonts from "../../styles/Fonts";
+import useCustomFonts from "../styles/Fonts";
 
 const BagPage = ({route}) => {
   const [fontLoaded] = useCustomFonts();
