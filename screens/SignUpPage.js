@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, ScrollView, TextInput, TouchableOpacity, Image } from 'react-native';
 import authService from '../services/authService';
 
 const SignUpPage = ({ navigation }) => {
@@ -55,6 +55,14 @@ const SignUpPage = ({ navigation }) => {
                 </TouchableOpacity>
             </View>
             {message ? <Text style={{ textAlign: 'center', color: 'red', marginTop: 20 }}>{message}</Text> : null}
+
+            <Text style={{ textAlign: 'center', color: '#222222', fontSize: 15, fontFamily: 'MetroMedium', top: 200 }}>Or login with social account</Text>
+
+            <View style={{flexDirection:'column', alignSelf:'center', top:130}}>
+                <Image source={require('./../assets/img/go-log.png')} style={{width:200, height:200, resizeMode:'contain'}} />
+                <Image source={require('./../assets/img/fb-log.png')} style={{width:200, height:200, resizeMode:'contain', bottom:160}} />
+                <Image source={require('./../assets/img/apple-log.png')} style={{width:200, height:200, resizeMode:'contain', bottom:320}} />
+            </View>
         </ScrollView>
     );
 };

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Text, View, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, ScrollView, TextInput, TouchableOpacity, Image } from 'react-native';
 import authService from '../services/authService';
+import useCustomFont from '../styles/Fonts'
 
 const LoginPage = ({ navigation }) => {
+    const [fontsLoaded] = useCustomFont();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
@@ -16,6 +18,14 @@ const LoginPage = ({ navigation }) => {
             setMessage('Failed to login');
         }
     };
+
+    if (!fontsLoaded) {
+        return (
+            <View>
+                <Text>Loading...</Text>
+            </View>
+        )
+    }
 
     return (
         <ScrollView style={{ flex: 1, backgroundColor: '#F5F5F5' }}>
@@ -37,12 +47,12 @@ const LoginPage = ({ navigation }) => {
                     style={{ borderColor: 'gray', height: 64, marginBottom: 10, paddingHorizontal: 10, color: '#666666', backgroundColor: 'white', shadowColor: 'black', shadowRadius: 1, shadowOpacity: 0.2, width: '90%', fontSize: 15, fontFamily: 'MetroLight' }} 
                 />
             </View>
-            <TouchableOpacity style={{ alignSelf: 'flex-end', right: 18, top: 70 }} onPress={() => navigation.navigate('ForgotPassword')}>
+            <TouchableOpacity style={{ alignSelf: 'flex-end', right: 19, top: 40 }} onPress={() => navigation.navigate('ForgotPassword')}>
                 <Text style={{ color: '#222222', fontSize: 15, fontFamily: 'MetroMedium' }}>Forgot your password?</Text>
             </TouchableOpacity>
             <View style={{ justifyContent: 'flex-end', top: 95 }}>
                 <TouchableOpacity onPress={handleLogin} style={{ width: '100%', alignItems: 'center' }}>
-                    <View style={{ backgroundColor: 'red', width: '90%', height: 50, borderRadius: 20, justifyContent: 'center' }}>
+                    <View style={{ backgroundColor: 'red', width: '90%', height: 50, borderRadius: 20, justifyContent: 'center', bottom:30 }}>
                         <Text style={{ textAlign: 'center', fontFamily: 'MetroBold', letterSpacing: 1, fontSize: 15, color: 'white' }}>LOGIN</Text>
                     </View>
                 </TouchableOpacity>
@@ -51,6 +61,15 @@ const LoginPage = ({ navigation }) => {
                 <Text style={{ color: '#222222', fontSize: 15, fontFamily: 'MetroMedium' }}>Don't have an account?</Text>
             </TouchableOpacity>
             {message ? <Text style={{ textAlign: 'center', color: 'red', marginTop: 20 }}>{message}</Text> : null}
+
+    
+            <Text style={{ textAlign: 'center', color: '#222222', fontSize: 15, fontFamily: 'MetroMedium', top: 200 }}>Or login with social account</Text>
+
+            <View style={{flexDirection:'column', alignSelf:'center', top:130}}>
+                <Image source={require('./../assets/img/go-log.png')} style={{width:200, height:200, resizeMode:'contain'}} />
+                <Image source={require('./../assets/img/fb-log.png')} style={{width:200, height:200, resizeMode:'contain', bottom:160}} />
+                <Image source={require('./../assets/img/apple-log.png')} style={{width:200, height:200, resizeMode:'contain', bottom:320}} />
+            </View>
         </ScrollView>
     );
 };
